@@ -1,0 +1,7 @@
+{
+    "name": "node-app",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    }
+}
