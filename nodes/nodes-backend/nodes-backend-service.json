@@ -1,0 +1,22 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"nodes-backend-svc",
+      "labels":{
+         "name":"nodes-backend-svc"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":8081,
+          "targetPort":8081,
+          "protocol":"TCP"
+        }
+      ],
+      "selector":{
+         "app":"nodes-backend"
+      }
+   }
+}

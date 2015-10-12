@@ -1,0 +1,42 @@
+{
+  "kind": "ReplicationController",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "nodes-mono-rc",
+    "labels": {
+      "name": "nodes-mono-rc"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "app": "nodes-mono"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "nodes-mono"
+        }
+      },
+      "spec": {
+        "volumes": null,
+        "containers": [
+          {
+            "name": "nodes-mono",
+            "image": "binblee/nodes-mono:latest",
+            "ports": [
+              {
+                "containerPort": 8080,
+                "protocol": "TCP"
+              }
+            ],
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst"
+      }
+    }
+  }
+}
+

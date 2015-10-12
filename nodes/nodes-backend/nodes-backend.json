@@ -1,0 +1,42 @@
+{
+  "kind": "ReplicationController",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "nodes-backend-rc",
+    "labels": {
+      "name": "nodes-backend-rc"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "app": "nodes-backend"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "nodes-backend"
+        }
+      },
+      "spec": {
+        "volumes": null,
+        "containers": [
+          {
+            "name": "nodes-backend",
+            "image": "binblee/nodes-backend:latest",
+            "ports": [
+              {
+                "containerPort": 8081,
+                "protocol": "TCP"
+              }
+            ],
+            "imagePullPolicy": "Always"
+          }
+        ],
+        "restartPolicy": "Always",
+        "dnsPolicy": "ClusterFirst"
+      }
+    }
+  }
+}
+
