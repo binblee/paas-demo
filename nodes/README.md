@@ -47,6 +47,10 @@ curl http://<nodes-frontend-svc-ip>:8080/
 ### rolling update to nodes-backend
 
 ```
-kubectl rolling-update nodes-backend-rc nodes-backend-rc-v2 --image=binblee/nodes-backend:latest
+kubectl rolling-update nodes-backend-rc-v1 nodes-backend-rc-v2 --image=binblee/nodes-backend:latest
+```
+or
+```
+kubectl rolling-date nodes-backend-rc-v1 -f nodes-backend-v2.json
 ```
 

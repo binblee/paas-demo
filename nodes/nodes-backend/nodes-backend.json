@@ -2,20 +2,25 @@
   "kind": "ReplicationController",
   "apiVersion": "v1",
   "metadata": {
-    "name": "nodes-backend-rc",
+    "name": "nodes-backend-rc-v1",
     "labels": {
-      "name": "nodes-backend-rc"
+      "role": "nodes-backend-rc",
+      "bizgroup": "nodes-frontend-backend-demo"
     }
   },
   "spec": {
     "replicas": 1,
     "selector": {
-      "app": "nodes-backend"
+      "app": "nodes-backend",
+      "deployment": "v1",
+      "bizgroup": "nodes-frontend-backend-demo"
     },
     "template": {
       "metadata": {
         "labels": {
-          "app": "nodes-backend"
+          "app": "nodes-backend",
+          "deployment": "v1",
+          "bizgroup": "nodes-frontend-backend-demo"
         }
       },
       "spec": {

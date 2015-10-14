@@ -4,18 +4,23 @@
   "metadata": {
     "name": "nodes-backend-rc-v2",
     "labels": {
-      "name": "nodes-backend-rc-v2"
+      "role": "nodes-backend-rc",
+      "bizgroup": "nodes-frontend-backend-demo"
     }
   },
   "spec": {
     "replicas": 1,
     "selector": {
-      "app": "nodes-backend"
+      "app": "nodes-backend",
+      "deployment": "v2",
+      "bizgroup": "nodes-frontend-backend-demo"
     },
     "template": {
       "metadata": {
         "labels": {
-          "app": "nodes-backend"
+          "app": "nodes-backend",
+          "deployment": "v2",
+          "bizgroup": "nodes-frontend-backend-demo"
         }
       },
       "spec": {
